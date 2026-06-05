@@ -54,8 +54,8 @@
 
     /* TOOL CARDS */
     .cards{width:100%;display:flex;flex-direction:column;gap:12px;margin-bottom:8px;}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-decoration:none;display:block;transition:all 0.25s;position:relative;overflow:hidden;box-shadow:var(--shadow);}
-    .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-decoration:none;display:block;transition:all 0.25s;position:relative;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;-webkit-tap-highlight-color:transparent;}
+    .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;pointer-events:none;}
     .card.ppr::before{background:linear-gradient(90deg,var(--orange),#ff8c5a);}
     .card.seguro::before{background:linear-gradient(90deg,#3b82f6,#60a5fa);}
     .card:hover{box-shadow:var(--shadow-hover);transform:translateY(-2px);border-color:var(--border2);}
@@ -112,7 +112,7 @@
   <div class="sep"><div class="sep-line"></div><div class="sep-label">🛠 Herramientas gratuitas</div><div class="sep-line"></div></div>
 
   <div class="cards">
-    <a class="card ppr" href="https://asesor-salmeron-web-dh3n.vercel.app" target="_blank" rel="noopener">
+    <div class="card ppr" onclick="window.open('https://asesor-salmeron-web-dh3n.vercel.app','_blank');" style="cursor:pointer;">
       <div class="card-top">
         <div class="card-icon">📈</div>
         <span class="card-title">Simulador de Retiro</span>
@@ -125,9 +125,9 @@
         <span class="feat">💰 Pensión estimada</span>
       </div>
       <div class="card-cta"><span>Calcular mi proyección</span><div class="cta-arrow">→</div></div>
-    </a>
+    </div>
 
-    <a class="card seguro" href="https://asesor-salmeron-web-dh3n.vercel.app/seguro" target="_blank" rel="noopener">
+    <div class="card seguro" onclick="window.open('https://asesor-salmeron-web-dh3n.vercel.app/seguro','_blank');" style="cursor:pointer;">
       <div class="card-top">
         <div class="card-icon">🛡️</div>
         <span class="card-title">Cotizador de Seguro de Vida</span>
@@ -140,7 +140,7 @@
         <span class="feat">🏥 3 paquetes</span>
       </div>
       <div class="card-cta"><span>Ver mi cotización</span><div class="cta-arrow">→</div></div>
-    </a>
+    </div>
   </div>
 
   <div class="sep"><div class="sep-line"></div><div class="sep-label">📱 Encuéntrame en</div><div class="sep-line"></div></div>
