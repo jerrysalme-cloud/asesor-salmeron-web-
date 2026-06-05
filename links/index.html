@@ -1,41 +1,28 @@
-<!-- ================================================================
-     PORTAL DE LINKS - ARCHIVO GENÉRICO
-     ================================================================
-     SUBE ESTE ARCHIVO en GitHub como: links/index.html
-     URL resultante: tu-repositorio.vercel.app/links
-     
-     PLACEHOLDERS A CAMBIAR:
-     - WA_NUMBER           → Tu número de WhatsApp (52 + 10 dígitos)
-     - TU_LOGO.png         → Nombre de tu archivo de logo
-     - [TU APELLIDO]       → Tu apellido
-     - [Tu Especialidad]   → Tu especialidad
-     - [Tu Ciudad]         → Tu ciudad
-     - URL_PPR             → URL completa de tu simulador PPR
-     - URL_SEGURO          → URL completa de tu cotizador de seguro
-     - tu-usuario-ig       → Tu usuario de Instagram (sin @)
-     ================================================================ -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asesor [TU APELLIDO] — Herramientas Financieras</title>
+  <title>GS Patrimonial – Gerardo Salmerón</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0F153F;
-      --surface:#1a2258;
-      --surface2:#1e2a6a;
-      --gold:#c9a84c;
-      --gold-dim:rgba(201,168,76,0.12);
-      --green:#2DAA26;
-      --text:#f1f5f9;
-      --text-muted:#94a3b8;
-      --text-dim:#64748b;
-      --border:rgba(255,255,255,0.09);
-      --radius:20px;
+      --bg:#F0F2F5;
+      --card:#D0D4DA;
+      --card2:#BFC4CB;
+      --orange:#f46936;
+      --orange-dim:rgba(244,105,54,0.12);
+      --dark:#1A1D23;
+      --text:#1A1D23;
+      --text-muted:#6B7280;
+      --text-dim:#9CA3AF;
+      --border:#E5E7EB;
+      --border2:#D1D5DB;
+      --radius:18px;
       --radius-sm:12px;
+      --shadow:0 2px 12px rgba(0,0,0,0.07);
+      --shadow-hover:0 8px 28px rgba(0,0,0,0.12);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
@@ -44,228 +31,139 @@
       background:var(--bg);
       color:var(--text);
       min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      padding:40px 20px 60px;
+      display:flex;flex-direction:column;align-items:center;
       -webkit-font-smoothing:antialiased;
     }
+    .wrapper{width:100%;max-width:460px;padding:44px 20px 60px;display:flex;flex-direction:column;align-items:center;}
 
     /* PROFILE */
-    .profile{text-align:center;margin-bottom:36px;}
-    .logo-wrap{
-      width:88px;height:88px;
-      background:var(--surface);
-      border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      margin:0 auto 16px;
-      border:2px solid rgba(201,168,76,0.3);
-      overflow:hidden;
-    }
-    .logo-wrap img{
-      width:72px;height:72px;
-      object-fit:contain;
-      mix-blend-mode:screen;
-    }
-    .profile-name{font-size:22px;font-weight:800;letter-spacing:-0.3px;margin-bottom:4px;}
-    .profile-name span{color:var(--gold);}
-    .profile-sub{font-size:13px;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}
-    .profile-desc{font-size:14px;color:var(--text-muted);max-width:340px;margin:0 auto;line-height:1.6;}
+    .profile{text-align:center;margin-bottom:32px;width:100%;}
+    .logo-ring{width:96px;height:96px;border-radius:50%;margin:0 auto 18px;padding:3px;background:linear-gradient(135deg,#f46936,#ff8c5a);box-shadow:0 4px 20px rgba(244,105,54,0.25);}
+    .logo-inner{width:100%;height:100%;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+    .logo-inner img{width:78px;height:78px;object-fit:contain;border-radius:50%;}
+    .profile-name{font-size:26px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px;color:var(--dark);}
+    .profile-name span{color:var(--orange);}
+    .profile-badge{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+    .profile-badge::before,.profile-badge::after{content:'';width:20px;height:1px;background:var(--border2);}
+    .profile-desc{font-size:13.5px;color:var(--text-muted);max-width:320px;margin:0 auto;line-height:1.65;}
 
-    /* DIVIDER */
-    .divider{
-      width:48px;height:2px;
-      background:linear-gradient(90deg,transparent,var(--gold),transparent);
-      margin:24px auto;
-    }
-
-    /* SECTION LABEL */
-    .section-label{
-      font-size:10px;font-weight:600;color:var(--text-dim);
-      letter-spacing:2px;text-transform:uppercase;
-      text-align:center;margin-bottom:14px;
-    }
+    /* SEPARATOR */
+    .sep{width:100%;display:flex;align-items:center;gap:12px;margin:28px 0 14px;}
+    .sep-line{flex:1;height:1px;background:var(--border);}
+    .sep-label{font-size:10px;font-weight:700;color:var(--text-dim);letter-spacing:2px;text-transform:uppercase;white-space:nowrap;}
 
     /* TOOL CARDS */
-    .cards{width:100%;max-width:420px;display:flex;flex-direction:column;gap:14px;margin-bottom:32px;}
-
-    .card{
-      background:var(--surface);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:22px 20px;
-      text-decoration:none;
-      display:block;
-      transition:all 0.25s;
-      position:relative;
-      overflow:hidden;
-    }
-    .card::before{
-      content:'';
-      position:absolute;top:0;left:0;right:0;height:3px;
-    }
-    .card.ppr::before{background:linear-gradient(90deg,var(--gold),#e0c06d);}
+    .cards{width:100%;display:flex;flex-direction:column;gap:12px;margin-bottom:8px;}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-decoration:none;display:block;transition:all 0.25s;position:relative;overflow:hidden;box-shadow:var(--shadow);}
+    .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+    .card.ppr::before{background:linear-gradient(90deg,var(--orange),#ff8c5a);}
     .card.seguro::before{background:linear-gradient(90deg,#3b82f6,#60a5fa);}
-    .card:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,0.3);}
+    .card:hover{box-shadow:var(--shadow-hover);transform:translateY(-2px);border-color:var(--border2);}
     .card:active{transform:translateY(0);}
+    .card-top{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+    .card-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+    .card.ppr .card-icon{background:var(--orange-dim);border:1px solid rgba(244,105,54,0.15);}
+    .card.seguro .card-icon{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.15);}
+    .card-title{font-size:16px;font-weight:700;flex:1;color:var(--dark);}
+    .card-badge{font-size:10px;font-weight:600;padding:3px 9px;border-radius:20px;white-space:nowrap;}
+    .card.ppr .card-badge{background:var(--orange-dim);color:var(--orange);border:1px solid rgba(244,105,54,0.2);}
+    .card.seguro .card-badge{background:rgba(59,130,246,0.08);color:#3b82f6;border:1px solid rgba(59,130,246,0.2);}
+    .card-desc{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:12px;}
+    .card-features{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+    .feat{font-size:11px;font-weight:600;background:#6699CC;border:1px solid transparent;padding:3px 9px;border-radius:20px;color:#FFFFFF;}
+    .card-cta{display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:700;}
+    .card.ppr .card-cta{color:var(--orange);}
+    .card.seguro .card-cta{color:#3b82f6;}
+    .cta-arrow{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;}
+    .card.ppr .cta-arrow{background:var(--orange-dim);color:var(--orange);}
+    .card.seguro .cta-arrow{background:rgba(59,130,246,0.08);color:#3b82f6;}
 
-    .card-top{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
-    .card-icon{font-size:26px;flex-shrink:0;}
-    .card-title{font-size:17px;font-weight:700;}
-    .card.ppr .card-title{color:var(--gold);}
-    .card.seguro .card-title{color:#60a5fa;}
-    .card-badge{
-      margin-left:auto;font-size:10px;font-weight:600;
-      padding:3px 9px;border-radius:20px;white-space:nowrap;
-    }
-    .card.ppr .card-badge{background:var(--gold-dim);color:var(--gold);border:1px solid rgba(201,168,76,0.25);}
-    .card.seguro .card-badge{background:rgba(59,130,246,0.12);color:#60a5fa;border:1px solid rgba(59,130,246,0.25);}
-
-    .card-desc{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:14px;}
-
-    .card-features{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;}
-    .feat{
-      font-size:11px;font-weight:500;
-      background:rgba(255,255,255,0.06);
-      border:1px solid var(--border);
-      padding:4px 10px;border-radius:20px;
-      color:var(--text-muted);
-    }
-
-    .card-cta{
-      display:flex;align-items:center;justify-content:space-between;
-      font-size:13px;font-weight:600;
-    }
-    .card.ppr .card-cta{color:var(--gold);}
-    .card.seguro .card-cta{color:#60a5fa;}
-    .card-arrow{font-size:18px;}
-
-    /* SOCIAL LINKS */
-    .socials{width:100%;max-width:420px;display:flex;flex-direction:column;gap:10px;margin-bottom:32px;}
-
-    .social-btn{
-      display:flex;align-items:center;gap:14px;
-      padding:14px 18px;
-      background:var(--surface);
-      border:1px solid var(--border);
-      border-radius:var(--radius-sm);
-      text-decoration:none;
-      color:var(--text-muted);
-      font-size:14px;font-weight:500;
-      transition:all 0.2s;
-    }
-    .social-btn:hover{background:var(--surface2);color:var(--text);}
-    .social-icon{font-size:20px;flex-shrink:0;}
-    .social-label{flex:1;}
-    .social-handle{font-size:12px;color:var(--text-dim);margin-top:1px;}
-    .social-arrow{font-size:14px;color:var(--text-dim);}
+    /* SOCIAL BUTTONS */
+    .socials{width:100%;display:flex;flex-direction:column;gap:10px;margin-bottom:36px;}
+    .social-btn{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);text-decoration:none;color:var(--text-muted);font-size:14px;font-weight:500;transition:all 0.2s;box-shadow:var(--shadow);}
+    .social-btn:hover{box-shadow:var(--shadow-hover);border-color:var(--border2);color:var(--dark);}
+    .social-icon-wrap{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+    .social-wa .social-icon-wrap{background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.2);}
+    .social-ig .social-icon-wrap{background:var(--orange-dim);border:1px solid rgba(244,105,54,0.15);}
+    .social-label-main{font-size:14px;font-weight:600;color:var(--dark);}
+    .social-handle{font-size:11px;color:var(--text-dim);margin-top:1px;}
+    .social-arrow{margin-left:auto;font-size:13px;color:var(--text-dim);}
 
     /* FOOTER */
-    .footer{text-align:center;font-size:11px;color:var(--text-dim);margin-top:8px;}
-    .footer a{color:var(--text-dim);text-decoration:underline;}
+    .footer{text-align:center;font-size:11px;color:var(--text-dim);padding-top:16px;border-top:1px solid var(--border);width:100%;}
+    .footer-logo{font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:4px;}
+    .footer-logo span{color:var(--orange);}
   </style>
 </head>
 <body>
+<div class="wrapper">
 
-  <!-- PROFILE -->
   <div class="profile">
-    <div class="logo-wrap">
-      <img src="/TU_LOGO.png" alt="Logo"> <!-- ← CAMBIA el nombre del logo -->
+    <div class="logo-ring">
+      <div class="logo-inner">
+        <img src="https://asesor-salmeron-web-dh3n.vercel.app/logo.png" alt="GS Patrimonial">
+      </div>
     </div>
-    <div class="profile-name">Asesor <span>[TU APELLIDO]</span></div> <!-- ← CAMBIA -->
-    <div class="profile-sub">[Tu Especialidad]</div> <!-- ← CAMBIA -->
-    <div class="profile-desc">
-      Agente de seguros y asesor financiero. Especialista en protección patrimonial y planeación del retiro.
-      <!-- ← Puedes modificar esta descripción -->
-    </div>
+    <div class="profile-name">Gerardo <span>Salmerón</span></div>
+    <div class="profile-badge">GS Patrimonial</div>
+    <div class="profile-desc">Agente de seguros y asesor financiero. Especialista en protección patrimonial y planeación del retiro · Villahermosa, Tabasco.</div>
   </div>
 
-  <div class="divider"></div>
-
-  <!-- HERRAMIENTAS -->
-  <div class="section-label">🛠️ Mis herramientas gratuitas</div>
+  <div class="sep"><div class="sep-line"></div><div class="sep-label">🛠 Herramientas gratuitas</div><div class="sep-line"></div></div>
 
   <div class="cards">
-
-    <!-- SIMULADOR PPR -->
-    <a class="card ppr" href="URL_PPR"> <!-- ← CAMBIA por tu URL completa del simulador PPR -->
+    <a class="card ppr" href="https://asesor-salmeron-web-dh3n.vercel.app">
       <div class="card-top">
-        <span class="card-icon">📈</span>
+        <div class="card-icon">📈</div>
         <span class="card-title">Simulador de Retiro</span>
         <span class="card-badge">OptiMaxx Plus</span>
       </div>
-      <p class="card-desc">
-        Visualiza cuánto tendrías acumulado al llegar a los 65 años según tu aportación mensual. Plan de inversión con rendimientos reales y bono de fidelidad Allianz.
-      </p>
+      <p class="card-desc">Visualiza cuánto tendrías acumulado al llegar a los 65 años. Con rendimientos reales y bono de fidelidad Allianz.</p>
       <div class="card-features">
         <span class="feat">📊 7 portafolios</span>
         <span class="feat">🎁 Bono de fidelidad</span>
         <span class="feat">💰 Pensión estimada</span>
       </div>
-      <div class="card-cta">
-        <span>Calcular mi proyección</span>
-        <span class="card-arrow">→</span>
-      </div>
+      <div class="card-cta"><span>Calcular mi proyección</span><div class="cta-arrow">→</div></div>
     </a>
 
-    <!-- COTIZADOR SEGURO -->
-    <a class="card seguro" href="URL_SEGURO"> <!-- ← CAMBIA por tu URL completa del cotizador -->
+    <a class="card seguro" href="https://asesor-salmeron-web-dh3n.vercel.app/seguro">
       <div class="card-top">
-        <span class="card-icon">🛡️</span>
+        <div class="card-icon">🛡️</div>
         <span class="card-title">Cotizador de Seguro de Vida</span>
         <span class="card-badge">OptiMaxx Protección</span>
       </div>
-      <p class="card-desc">
-        Descubre en segundos cuánto cuesta proteger a tu familia. Con devolución del 100% de tus primas si llegas al final del plazo sin usar el seguro.
-      </p>
+      <p class="card-desc">Descubre cuánto cuesta proteger a tu familia. Con devolución del 100% de tus primas al final del plazo.</p>
       <div class="card-features">
         <span class="feat">🔄 Recuperas tu dinero</span>
         <span class="feat">💳 Hasta 12 MSI</span>
         <span class="feat">🏥 3 paquetes</span>
       </div>
-      <div class="card-cta">
-        <span>Ver mi cotización</span>
-        <span class="card-arrow">→</span>
-      </div>
+      <div class="card-cta"><span>Ver mi cotización</span><div class="cta-arrow">→</div></div>
     </a>
-
   </div>
 
-  <!-- REDES SOCIALES -->
-  <div class="section-label">📱 Encuéntrame en</div>
+  <div class="sep"><div class="sep-line"></div><div class="sep-label">📱 Encuéntrame en</div><div class="sep-line"></div></div>
 
   <div class="socials">
-
-    <!-- WHATSAPP -->
-    <a class="social-btn" href="https://wa.me/52XXXXXXXXXX?text=Hola, me gustaría recibir información sobre tus servicios financieros." target="_blank">
-      <!-- ← CAMBIA 52XXXXXXXXXX por tu número -->
-      <span class="social-icon">💬</span>
-      <div class="social-label">
-        <div>WhatsApp</div>
-        <div class="social-handle">Escríbeme directo</div>
-      </div>
+    <a class="social-btn social-wa" href="https://wa.me/529931035030?text=Hola%20Gerardo%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20tus%20servicios%20financieros." target="_blank">
+      <div class="social-icon-wrap">💬</div>
+      <div><div class="social-label-main">WhatsApp</div><div class="social-handle">Escríbeme directo</div></div>
       <span class="social-arrow">↗</span>
     </a>
-
-    <!-- INSTAGRAM -->
-    <a class="social-btn" href="https://instagram.com/tu-usuario-ig" target="_blank">
-      <!-- ← CAMBIA tu-usuario-ig por tu usuario de Instagram -->
-      <span class="social-icon">📸</span>
-      <div class="social-label">
-        <div>Instagram</div>
-        <div class="social-handle">@tu-usuario-ig</div> <!-- ← CAMBIA -->
-      </div>
+    <a class="social-btn social-ig" href="https://instagram.com/gspatrimonial" target="_blank">
+      <div class="social-icon-wrap">📸</div>
+      <div><div class="social-label-main">Instagram</div><div class="social-handle">@gspatrimonial</div></div>
       <span class="social-arrow">↗</span>
     </a>
-
   </div>
 
   <div class="footer">
-    <div>© 2025 Asesor [TU APELLIDO] · [Tu Ciudad], México</div> <!-- ← CAMBIA -->
-    <div style="margin-top:4px">
-      Agente independiente de seguros y asesor financiero
-    </div>
+    <div class="footer-logo">GS <span>Patrimonial</span></div>
+    <div>© 2025 Gerardo Salmerón · Villahermosa, Tabasco, México</div>
+    <div style="margin-top:3px">Agente independiente de seguros · Allianz México</div>
   </div>
 
+</div>
 </body>
 </html>
